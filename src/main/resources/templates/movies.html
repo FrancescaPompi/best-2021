@@ -8,10 +8,11 @@
 	<body>
 		<h2>The best movies of 2021 are:</h2>
 		<div>
-			<ul>
-				<li th:each="movie : ${movies}" th:text="${movies}"/>			
-			</ul>
+			<ul th:if="${list.size() > 0}">
+				<li th:each="item : ${list}" th:text="${item}"/>			
+			</ul >
 		</div>
+		<p th:unless="${list.size() > 0}">No elements in list</p >
 		<a th:href="@{'/'}">Return to homepage</a>
 	</body>
 	

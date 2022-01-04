@@ -2,11 +2,13 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
 	<head>
+		<link rel="stylesheet" th:href="@{/css/application.css}">
 		<title>BestSongsOf2021</title>
 	</head>
 	
 	<body>
-		<h2>The best songs of 2021 are:</h2>
+		<h1>Best of 2021</h1>
+		<h2 th:text="${title}"></h2 >
 		<div>
 			<ul th:if="${list.size() > 0}">
 				<!--each funziona che creo una variabile temporanea item, per ogni item nella lista leggi il valore di item-->
@@ -18,3 +20,8 @@
 	</body>
 	
 </html>
+
+<!--faccio un unico template per entrambe le liste perché il codice è uguale
+cambia solo il titolo, quindi come ho fatto per la lista li aggiungo nel model del controller
+e poi sceglie lui il metodo giusto in base all'url selezionato,
+così posso eliminare gli html movies e songs-->
